@@ -1,8 +1,8 @@
 # Laboratório 4 - Programa 1  :computer:
 *Programação genérica e utilização de TADs genéricos*
 
-:bust_in_silhouette: Aluno: **Leonardo dos Santos Matos**
-:pencil:Matrícula: **20160143879**
+* :bust_in_silhouette: _Aluno: **Leonardo dos Santos Matos**
+* :pencil:  _Matrícula: **20160143879**
  
 ## Como compilar
 No terminal, digite: 
@@ -18,4 +18,4 @@ $ ./bin/prog1
 ```
 
 ## Dificuldades
-1. ainda em processo de desenvolvimento
+1. ainda em processo de desenvolvimento 
