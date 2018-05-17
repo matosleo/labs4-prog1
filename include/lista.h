@@ -25,6 +25,7 @@ public:
 	~Node();
 	Node(T num, shared_ptr<Node> nextPtr);
 	T getValor();
+	void setValor(T newValor);
 	shared_ptr<Node<T>> getNext();
 	void setNext(shared_ptr<Node<T>> nextPtr);
 
@@ -48,6 +49,11 @@ Node<T>::Node(T _valor, shared_ptr<Node<T>> nextPtr) : valor(_valor), proximo(ne
 template <typename T>
 T Node<T>::getValor() {
 	return valor;
+}
+
+template <typename T>
+void Node<T>::setValor(T newValor) {
+	this->valor = newValor;
 }
 
 template <typename T>

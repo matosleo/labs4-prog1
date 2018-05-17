@@ -7,6 +7,8 @@
 
 void lerString(std::shared_ptr<ListaLigada<char>> l);
 
+void removerEspacos(std::shared_ptr<ListaLigada<char>> l);
 
+void tudoMinuscula(std::shared_ptr<ListaLigada<char>> l);
 
 #endif

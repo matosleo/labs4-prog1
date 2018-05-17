@@ -12,3 +12,29 @@ void lerString(std::shared_ptr<ListaLigada<char>> l)
 		l->InsereNoFinal(s[i]);
 	}
 }
+
+void removerEspacos(std::shared_ptr<ListaLigada<char>> l)
+{
+	int pos = 1;
+	for(shared_ptr<Node<char>>iterator = l->getCabeca(); iterator != l->getCauda(); iterator = iterator->getNext())
+	{
+		if(iterator->getValor() == ' ')
+		{
+			l->RemoveNaPosicao(pos-1);
+			pos--;
+		}
+		pos++;
+	}
+}
+
+void tudoMinuscula(std::shared_ptr<ListaLigada<char>> l)
+{
+	for(shared_ptr<Node<char>>iterator = l->getCabeca(); iterator != l->getCauda(); iterator = iterator->getNext())
+	{
+		if(iterator->getValor() < 97)
+		{
+			iterator->setValor(iterator->getValor()+32);
+		}
+	}	
+}
+

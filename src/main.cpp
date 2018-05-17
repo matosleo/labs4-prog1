@@ -19,6 +19,17 @@ int main(int argc, char const *argv[])
 
 	cout << endl;
 
+	removerEspacos(lista);
+	tudoMinuscula(lista);
+
+	for(shared_ptr<Node<char>>iterator = lista->getCabeca(); iterator != lista->getCauda(); iterator = iterator->getNext())
+	{
+		cout << iterator->getValor();
+	}
+
+	cout << endl;
+
+
 
 	return 0;
 }
