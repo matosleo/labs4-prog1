@@ -85,6 +85,8 @@ private:
 public:
 	ListaLigada();
 	~ListaLigada();
+	shared_ptr<Node<T>> getCabeca();
+	shared_ptr<Node<T>> getCauda();
 	bool InsereNoInicio(T _valor);
 	bool InsereNoFinal(T _valor);
 	bool InsereNaPosicao(int pos, T _valor);
@@ -104,6 +106,18 @@ template <typename T>
 ListaLigada<T>::~ListaLigada() {
 	while (cabeca != this->cauda)
 		cabeca = cabeca->getNext();
+}
+
+template <typename T>
+shared_ptr<Node<T>> ListaLigada<T>::getCabeca()
+{
+    return this->cabeca;
+}
+
+template <typename T>
+shared_ptr<Node<T>> ListaLigada<T>::getCauda()
+{
+    return this->cauda;
 }
 
 template <typename T>

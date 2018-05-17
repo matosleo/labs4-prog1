@@ -1,57 +1,24 @@
 #include <iostream>
-#include <string>
-#include <stack>
-#include "lista.h"
-
-bool verificaPalindromo(std::string s);
-void tudoMinuscula(std:: string &s);
+#include <memory>
+#include "trata_string.h"
 
 int main(int argc, char const *argv[])
 {
-	std::string palavra;
-	std::cin >> palavra;
 
-	tudoMinuscula(palavra);
+	shared_ptr<ListaLigada<char>> lista = make_shared<ListaLigada<char>>();
 
-	if(verificaPalindromo(palavra)){
-		std::cout << "A palavra " << palavra << " é um palindromo." << std::endl; 
-	}
-	else
+	lerString(lista);
+
+	cout << lista->size() << std::endl;
+
+
+	for(shared_ptr<Node<char>>iterator = lista->getCabeca(); iterator != lista->getCauda(); iterator = iterator->getNext())
 	{
-		std::cout << "A palavra " << palavra << " não é um palindromo." << std::endl; 
+		cout << iterator->getValor();
 	}
+
+	cout << endl;
+
 
 	return 0;
-}
-
-bool verificaPalindromo(std::string s)
-{
-	std::stack<char> pilha;
-
-	for(unsigned int i = 0; i < s.size(); i++)
-	{
-		pilha.push(s[i]);
-	}
-
-	for(unsigned int  i = 0; i < s.size(); i++)
-	{
-		if(s[i] != pilha.top())
-		{
-			return false;
-		}
-		pilha.pop();
-	}
-
-	return true;
-}
-
-void tudoMinuscula(std:: string &s) 
-{
-	for(unsigned int i = 0; i < s.size(); i++)
-	{
-		if(s[i] < 'a')
-		{
-			s[i] += 32;
-		}
-	}
 }
