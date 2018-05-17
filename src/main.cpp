@@ -6,8 +6,12 @@ int main(int argc, char const *argv[])
 {
 
 	shared_ptr<ListaLigada<char>> lista = make_shared<ListaLigada<char>>();
+	
+	string palavra;
 
-	lerString(lista);
+	getline(std::cin, palavra);
+
+	lerString(lista, palavra);
 
 	cout << lista->size() << std::endl;
 
@@ -22,12 +26,15 @@ int main(int argc, char const *argv[])
 	removerEspacos(lista);
 	tudoMinuscula(lista);
 
-	for(shared_ptr<Node<char>>iterator = lista->getCabeca(); iterator != lista->getCauda(); iterator = iterator->getNext())
+	if(verificaPalindromo(lista))
 	{
-		cout << iterator->getValor();
+		cout << palavra << " é palíndromo" << endl;
+	}
+	else
+	{
+		cout << palavra << " não é palíndromo" << endl;	
 	}
 
-	cout << endl;
 
 
 
