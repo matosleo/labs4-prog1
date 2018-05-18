@@ -13,6 +13,7 @@ int main(int argc, char const *argv[])
 
 	lerString(lista, palavra);
 
+	
 	cout << lista->size() << std::endl;
 
 
@@ -22,9 +23,19 @@ int main(int argc, char const *argv[])
 	}
 
 	cout << endl;
+	
 
-	removerEspacos(lista);
-	tudoMinuscula(lista);
+	removeEspacos(lista);
+	removeCaracEspeciais(lista);
+	//tudoMinuscula(lista);
+
+	for(shared_ptr<Node<char>>iterator = lista->getCabeca(); iterator != lista->getCauda(); iterator = iterator->getNext())
+	{
+		cout << iterator->getValor();
+	}
+
+	cout << endl;
+
 
 	if(verificaPalindromo(lista))
 	{

@@ -9,7 +9,7 @@ void lerString(std::shared_ptr<ListaLigada<char>> l, string s)
 	}
 }
 
-void removerEspacos(std::shared_ptr<ListaLigada<char>> l)
+void removeEspacos(std::shared_ptr<ListaLigada<char>> l)
 {
 	int pos = 1;
 	for(shared_ptr<Node<char>>iterator = l->getCabeca(); iterator != l->getCauda(); iterator = iterator->getNext())
@@ -27,16 +27,33 @@ void tudoMinuscula(std::shared_ptr<ListaLigada<char>> l)
 {
 	for(shared_ptr<Node<char>>iterator = l->getCabeca(); iterator != l->getCauda(); iterator = iterator->getNext())
 	{
-		if(iterator->getValor() < 97)
+		if(iterator->getValor() < ('Z'+1))
 		{
 			iterator->setValor(iterator->getValor()+32);
 		}
 	}	
 }
 
+void removeCaracEspeciais(std::shared_ptr<ListaLigada<char>> l)
+{
+	string especiais = "àÀáÁãÃâÂèÈéÉẽẼêÊìÌíÍĩĨîÎòÒóÓõÕôÔùÙúÚũŨûÛçÇ";
+	string normais = "aaaaaaaaeeeeeeeeiiiiiiiioooooooouuuuuuuucc";
+	int j;
+	for(shared_ptr<Node<char>>iterator = l->getCabeca(); iterator != l->getCauda(); iterator = iterator->getNext())
+	{
+		for(unsigned int i = 0; i < especiais.size(); i++)
+		{
+			if(iterator->getValor() == especiais[i])
+			{
+				iterator->setValor(normais[i]);
+			}
+		}
+	}
+}
+
 bool verificaPalindromo(std::shared_ptr<ListaLigada<char>> l)
 {
-	stack<char> pilha;
+	Pilha<char> pilha(l->size());
 
 	for(shared_ptr<Node<char>>iterator = l->getCabeca(); iterator != l->getCauda(); iterator = iterator->getNext())
 	{
