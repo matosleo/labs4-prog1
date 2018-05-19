@@ -18,4 +18,6 @@ $ ./bin/prog1
 ```
 
 ## Dificuldades
-1. ainda em processo de desenvolvimento 
+1. Implementar função de remover caracteres especiais
+2. Utilizar classes através de templates
+3. declarar ponteiros inteligentes
