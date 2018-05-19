@@ -1,7 +1,19 @@
+/**
+* @file     main.cpp
+* @brief    Programa, usando TAD de lista, verifica se um conjunto de caracteres é palindromo atraves da TAD Pilha
+* @author   Leonardo Matos (matos_leo95@live.com)
+* @since	17/05/2018
+* @date		18/05/2018
+*/
+
 #include <iostream>
 #include <memory>
 #include "trata_string.h"
 
+
+/** 
+ * @brief Função principal
+ */
 int main(int argc, char const *argv[])
 {
 
@@ -12,29 +24,11 @@ int main(int argc, char const *argv[])
 	getline(std::cin, palavra);
 
 	lerString(lista, palavra);
-
-	
-	cout << lista->size() << std::endl;
-
-
-	for(shared_ptr<Node<char>>iterator = lista->getCabeca(); iterator != lista->getCauda(); iterator = iterator->getNext())
-	{
-		cout << iterator->getValor();
-	}
-
-	cout << endl;
 	
 
-	removeEspacos(lista);
 	removeCaracEspeciais(lista);
-	//tudoMinuscula(lista);
-
-	for(shared_ptr<Node<char>>iterator = lista->getCabeca(); iterator != lista->getCauda(); iterator = iterator->getNext())
-	{
-		cout << iterator->getValor();
-	}
-
-	cout << endl;
+	tudoMinuscula(lista);
+	removeEspacosPontos(lista);
 
 
 	if(verificaPalindromo(lista))

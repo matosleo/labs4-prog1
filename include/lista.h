@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <memory>
 
@@ -40,7 +41,6 @@ Node<T>::Node(T _valor) : valor(_valor), proximo(nullptr) {}
 
 template <typename T>
 Node<T>::~Node() {
-	cout << "Node(" << valor << ") removido." << endl;
 }
 
 template <typename T>
