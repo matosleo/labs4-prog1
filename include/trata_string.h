@@ -1,3 +1,12 @@
+/**
+* @file     trata_string.h
+* @brief    Definição das funções para tratar a expressão pos-fixa
+* @author	Leonardo Matos (matos_leo95@live.com)
+* @since	17/05/2018
+* @date		18/05/2018
+ * @sa		https://github.com/matosleo/labs4-prog1
+*/
+
 #ifndef TRATA_STRING_H
 #define TRATA_STRING_H
 
